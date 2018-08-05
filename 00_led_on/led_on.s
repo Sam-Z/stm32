@@ -3,9 +3,10 @@
 //
 .equ STACK_TOP, 0x20008000
 .text
-.global _start
+.global Reset_Handler
 .syntax unified
-_start:
+.section .isr_vector, "a", %progbits
+Reset_Handler:
     .word STACK_TOP
     .word start
     .type start, function
